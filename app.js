@@ -6,6 +6,12 @@ const bodyParser = require('body-parser');
 //Routes
 var indexRouter = require('./routes/index');
 var basketsRouter = require('./routes/baskets');
+var morgan  = require('morgan')
+
+// mongoose-morgan
+var mongooseMorgan = require('mongoose-morgan');
+
+
 // Set up mongoose connection
 const mongoose = require('mongoose'); 
 mongoose.connect('mongodb://localhost:27017/test'); 
@@ -17,6 +23,14 @@ db.once('open', function(callback){
   
 
 var app = express();
+app.use(morgan('combined'))
+
+
+
+
+
+
+
 app.routes;
 //Body Parser
 app.use(bodyParser.json());
@@ -30,13 +44,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/baskets', basketsRouter);
 
-app.post('/baskets/create',basketsRouter);
+app.post('/baskets/create.datos',basketsRouter);
 
-app.post('/baskets/:id/details',basketsRouter);
+app.post('/baskets/details.datos/:id',basketsRouter);
 
-app.put('/baskets/:id/update',basketsRouter);
+app.put('/baskets/update.datos/:id',basketsRouter);
 
-app.delete('/baskets/:id/delete',basketsRouter);
+app.delete('/baskets/delete.datos/:id',basketsRouter);
 
 app.get('/', indexRouter);
 

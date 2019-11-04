@@ -11,19 +11,22 @@ var about = require('./about')
 
 const baskets_controller = require('../controllers/baskets.controller');
 
+
+router.get('/baskets/login', baskets_controller.test);
+
 //test
 router.get('/baskets', baskets_controller.test);
 
 //Post Datos
-router.post('/baskets/create', baskets_controller.create_datos);
+router.post('/baskets/create.datos', baskets_controller.create_datos);
 
 //Get Datos
-router.get('/baskets/:id/details', baskets_controller.details_datos);
+router.get('/baskets/details.datos/:id', baskets_controller.details_datos);
 
 //Update Datos
-router.put('/baskets/:id/update', baskets_controller.update_datos);
+router.put('/baskets/update.datos/:id', baskets_controller.update_datos);
 
 
-router.delete('/baskets/:id/delete', baskets_controller.delete_datos);
+router.delete('/baskets/delete.datos/:id', baskets_controller.delete_datos);
 
 module.exports = router;
