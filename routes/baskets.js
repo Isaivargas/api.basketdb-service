@@ -9,24 +9,25 @@ var about = require('./about')
 //   res.sendFile('/Users/isai_vargas/Documents/Node-api/myapp/views' +'/index.html');
 //});
 
-const baskets_controller = require('../controllers/baskets.controller');
-
-
-router.get('/baskets/login', baskets_controller.test);
+const basketsController = require('../controllers/baskets.controller');
 
 //test
-router.get('/baskets', baskets_controller.test);
 
 //Post Datos
-router.post('/baskets/create.datos', baskets_controller.create_datos);
+router.post('/baskets/create', basketsController.create);
 
 //Get Datos
-router.get('/baskets/details.datos/:id', baskets_controller.details_datos);
+router.get('/baskets/details', basketsController.details);
+
+//Delete colection
+router.delete('/baskets/delete', basketsController.delete);
+
+router.put('/baskets/update', basketsController.updateDatoOne);
 
 //Update Datos
-router.put('/baskets/update.datos/:id', baskets_controller.update_datos);
+//router.put('/baskets/update', basketsController.update);
 
 
-router.delete('/baskets/delete.datos/:id', baskets_controller.delete_datos);
+//router.delete('/baskets/delete.datos/:id', basketsController.delete_datos);
 
 module.exports = router;

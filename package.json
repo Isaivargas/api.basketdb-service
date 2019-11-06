@@ -16,6 +16,7 @@
     "mongoose": "^5.7.7",
     "mongoose-morgan": "^1.0.12",
     "morgan": "~1.9.1",
+    "oracledb": "^4.0.1",
     "winston": "^3.2.1",
     "winston-daily-rotate-file": "^4.2.1"
   },
